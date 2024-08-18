@@ -1,5 +1,5 @@
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
-const apiUrlExample = "http://api.weatherapi.com/v1/current.json?q=London&aqi=no";
+const apiUrlExample = "https://api.weatherapi.com/v1/current.json?q=London&aqi=no";
 
 document.addEventListener("DOMContentLoaded", getWeather);
 
