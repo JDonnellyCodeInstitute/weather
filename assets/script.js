@@ -1,11 +1,16 @@
+//API and URL info
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
 const apiUrlExample = `https://api.weatherapi.com/v1/current.json?key=${apiKeyCode}&aqi=no&q=`;
 
 //Default at start
 document.addEventListener("DOMContentLoaded", function() {
     displayWeather("Belfast");
-    locationSearch();
+    //locationSearch();
 });
+document.getElementById('search').addEventListener("click", function() {
+    let place = document.getElementById('search-bar').value;
+    displayWeather(place);
+})
 
 /**
  * Main function which uses the weather API call data to display
@@ -34,21 +39,10 @@ async function displayWeather(location) {
         document.querySelector('.wind').innerHTML = `${response.current.wind_kph} km/hr`;
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
+        alert("Location not found. Please enter a valid location.");
     }
-}
 
-function locationSearch() {
+    /*if (response.condition.text === "Sunny") {
 
-    document.getElementById('search').addEventListener("click", function() {
-        let place = document.getElementById('search-bar').value;
-
-        console.log(place)
-
-        if (place) {
-            displayWeather(place);
-        } else {
-            alert("Please enter a valid location.");
-        }
-        
-    });
+    }*/
 }
