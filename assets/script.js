@@ -4,7 +4,9 @@ const apiUrlExample = `https://api.weatherapi.com/v1/current.json?key=${apiKeyCo
 //Default at start
 document.addEventListener("DOMContentLoaded", function() {
     displayWeather("Belfast");
+    locationSearch();
 });
+
 /**
  * Main function which uses the weather API call data to display
  * location, wind speed, temperature and humidity.
@@ -35,4 +37,18 @@ async function displayWeather(location) {
     }
 }
 
+function locationSearch() {
+
+    document.getElementById('search').addEventListener("click", function() {
+        let place = document.getElementById('search-bar').value;
+
+        console.log(place)
+
+        if (place) {
+            displayWeather(place);
+        } else {
+            alert("Please enter a valid location.");
+        }
         
+    });
+}
