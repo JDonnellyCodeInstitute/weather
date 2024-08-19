@@ -32,6 +32,7 @@ async function displayWeather(location) {
         const humidityElement = document.querySelector('.humidity');
         const windElement = document.querySelector('.wind');
         console.log(locationElement, temperatureElement, humidityElement, windElement);
+        console.log(response);
 
         document.querySelector('.location').innerHTML = response.location.name;
         document.querySelector('.temperature').innerHTML = `${response.current.temp_c}°C`;
@@ -42,7 +43,13 @@ async function displayWeather(location) {
         alert("Location not found. Please enter a valid location.");
     }
 
-    /*if (response.condition.text === "Sunny") {
+    let condition = response.current.condition.text;
+    console.log(condition);
+    let icon = document.getElementsByClassName('icon');
+    console.log(icon);
 
-    }*/
+    if (condition === "Sunny" ||
+        condition === "Clear") {
+            icon.src = "assets/images/1530392_weather_sun_sunny_temperature_icon.png";
+    }
 }
