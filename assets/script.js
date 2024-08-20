@@ -12,7 +12,7 @@ document.getElementById('search').addEventListener("click", function () {
     displayWeather(place);
 })
 //Allow use of enter button to search
-document.getElementById('search').addEventListener("keydown", function (event) {
+document.getElementById('search-bar').addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         let place = document.getElementById('search-bar').value;
         displayWeather(place);
