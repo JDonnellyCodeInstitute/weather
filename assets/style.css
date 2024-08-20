@@ -60,6 +60,10 @@
     margin-top: 40px;
 }
 
+.icon:hover {
+    width: 240px;
+}
+
 .climate h1 {
     font-size: 90px;
     font-weight: 450;
@@ -88,6 +92,10 @@
 .column img {
     width: 50px;
     margin-right: 12px;
+}
+
+.column img:hover {
+    width: 75px;
 }
 
 .humidity, .wind {
