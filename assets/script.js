@@ -46,18 +46,22 @@ async function displayWeather(location) {
         if (condition === "Sunny" ||
             condition === "Clear") {
             icon.src = "assets/images/1530392_weather_sun_sunny_temperature_icon.png";
+            icon.title = `${condition}`;
         } else if (condition === "Partly cloudy" ||
             condition === "Cloudy") {
             icon.src = "assets/images/1530369_weather_cloud_clouds_cloudy_icon.png";
+            icon.title = `${condition}`;
         } else if (condition === "Mist" ||
             condition === "Fog" ||
             condition === "Freezing fog") {
             icon.src = "assets/images/2682821_fog_foggy_forecast_mist_weather_icon.png";
+            icon.title = `${condition}`;
         } else if (condition === "Overcast" ||
             condition === "Patchy light rain with thunder" ||
             condition === "Moderate or heavy rain with thunder"
         ) {
             icon.src = "assets/images/2682845_cloud_cloudy_forecast_rain_sun_icon.png";
+            icon.title = `${condition}`;
         } else if (
             condition === "Patchy rain possible" ||
             condition === "Patchy light drizzle" ||
@@ -73,12 +77,14 @@ async function displayWeather(location) {
             condition === "Torrential rain shower"
         ) {
             icon.src = "assets/images/2995003_cloud_rain_weather_day_water_icon.png";
+            icon.title = `${condition}`;
         } else if (
             condition === "Thundery outbreaks possible" ||
             condition === "Blowing snow" ||
             condition === "Blizzard"
         ) {
             icon.src = "assets/images/3741354_weather_wind_windy_icon.png"
+            icon.title = `${condition}`;
         } else if (
             condition === "Patchy snow possible" ||
             condition === "Patchy sleet possible" ||
@@ -106,6 +112,7 @@ async function displayWeather(location) {
             condition === "Moderate or heavy snow with thunder"
         ) {
             icon.src = "assets/images/3741362_weather_cold_light snow_snow_icon.png";
+            icon.title = `${condition}`;
         }
 
     } catch (error) {
