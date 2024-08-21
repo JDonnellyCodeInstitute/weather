@@ -46,8 +46,8 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 - __Search Bar__
 
-  - The search bar takes user input in the form of a location, when the user initiates a search by hitting enter or clicking on the search button the interactive area of the page will display the weather details of the location the user has searched. Except in cases where the input is not a valid location in which case the user will get an alert to say so.
-  - The user is guided on the required info by the placeholder text, when they hover over the search button, the button will increase in size and a line of text will pop up that says 'Click to search'.
+  - The search bar takes user input in the form of a location, when the user initiates a search by hitting enter or clicking on the search button the interactive area of the page will display the weather details of the location the user has entered. Except in cases where the input is not a valid location in which case the user will get an alert to say so.
+  - The user is guided on the required info by the placeholder text, when phone/tablet users tap the search button it will increase in size, when laptop users hover over the search button the button will increase in size and a line of text will pop up that says 'Click to search'.
 
 ![Search Bar](assets/images/search-bar.png)
 ![Invalid Input](assets/images/invalid-input.png)
@@ -55,8 +55,15 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 - __Weather Icon, Temperature and Location__ 
 
   - The weather icon changes depending on the condition field in the weather data pulled from the JSON.
-  - When the user hovers over the weather icon it increases in size and a line of text appears on screen stating the current weather condition.
+  - When the phone/tablet user taps on the weather icon it increases in size, when the laptop user hovers over the weather icon it increases in size and a line of text appears on screen stating the current weather condition.
   - Temperature is the largest text on the page as the most important written data.
   - The location data is being presented for can be seen just under the temperature.
 
 ![Weather Icon, Temperature and Location](assets/images/temp-icon-location.png)
+
+- __Humidity and Windspeed__ 
+
+  - The bottom section of the user interface displays both the humidity and the windspeed at the location on display.
+  - Phone/tablet users can tap on the icons and they will increase in size, the laptop/desktop user can hover over the icons and they will increase in size ans they will see a short description of what each feature means.
+
+![Humidity and Windspeed](assets/images/humidity.png)
