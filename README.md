@@ -1,4 +1,9 @@
 weather icons taken from https://www.iconfinder.com/
+walkthrough guidance from https://www.youtube.com/watch?v=MIYQR-Ybrn4
+
+#World Wide Weather
+
+World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity and wind-speed of a location of their choice.
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
