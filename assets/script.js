@@ -2,22 +2,31 @@
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
 const apiUrlExample = `https://api.weatherapi.com/v1/current.json?key=${apiKeyCode}&aqi=no&q=`;
 
-//Default at start
-document.addEventListener("DOMContentLoaded", function () {
+// Default at start
+document.addEventListener("DOMContentLoaded", () => {
     displayWeather("Belfast");
+    setupEventListeners();
 });
-//Facilitate use of search bar
-document.getElementById('search').addEventListener("click", function () {
-    let place = document.getElementById('search-bar').value;
+
+/**
+ * Sets up event listeners for the search functionality.
+ */
+function setupEventListeners() {
+    document.getElementById('search').addEventListener("click", handleSearch);
+    document.getElementById('search-bar').addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            handleSearch();
+        }
+    });
+}
+
+/**
+ * Handles the search event.
+ */
+function handleSearch() {
+    const place = document.getElementById('search-bar').value;
     displayWeather(place);
-})
-//Allow use of enter button to search
-document.getElementById('search-bar').addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        let place = document.getElementById('search-bar').value;
-        displayWeather(place);
-    }
-})
+}
 
 /**
  * Main function which uses the weather API call data to display
