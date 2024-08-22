@@ -3,6 +3,9 @@ const locationElement = document.querySelector('.location');
 const temperatureElement = document.querySelector('.temperature');
 const humidityElement = document.querySelector('.humidity');
 const windElement = document.querySelector('.wind');
+const icon = document.querySelector('.icon');
+const windSleeve = document.getElementById('wind-sleeve');
+const droplet = document.getElementById('water');
 
 //API and URL info
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
@@ -70,8 +73,13 @@ async function displayWeather(location) {
 
         // Mid method event listeners to increase interactivity
         temperatureElement.addEventListener("click", toggleTemperature);
+        icon.addEventListener("click", toggleTemperature);
+
         windElement.addEventListener("click", toggleWindspeed);
+        windSleeve.addEventListener("click", toggleWindspeed);
+
         humidityElement.addEventListener("click", toggleHumidity);
+        droplet.addEventListener("click", toggleHumidity);
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
@@ -93,7 +101,7 @@ function updateDOM(response) {
  * Sets the weather icon based on the condition.
  */
 function setWeatherIcon(condition) {
-    const icon = document.querySelector('.icon');
+    
     // Give user condition info when they hover over the icon
     icon.title = condition;
 
@@ -159,7 +167,7 @@ function toggleWindspeed() {
  * humidity and precipitation by clicking on the humidity
  */
 function toggleHumidity() {
-    if (humidityElement.innerHTML === humidity) {
+    if (humidityElement.innerHTML.trim() === humidity.trim()) {
         humidityElement.innerHTML = rain;
     } else {
         humidityElement.innerHTML = humidity;
