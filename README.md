@@ -5,9 +5,9 @@ google fonts for font https://fonts.google.com/
 
 #World Wide Weather
 
-World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity and wind-speed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse.
+World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity, rainfall and wind-speed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse, the user can also alternate between centigrade and farenheit, mph and km/h windspeed, as well as humidity and rainfall.
 
-![Responsive Mockup](assets/images/all-devices-white.png)
+![Responsive Mockup](assets/images/mock-up.png)
 
 ## The Five Planes of User Experience
 
@@ -21,6 +21,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
     - The main tool for the user is the search bar and search button. They can input a location, as the placeholder text suggests, and search by clicking the button or by hitting enter. A method is called to add their input to the API call that requests the weather data as a JSON. If they search for something that is not a recognised location they will receive an alert stating "Location not found. Please enter a valid location."
     - Upon a successful search the user will see an image relevant to the weather condition stipulated in the JSON, the temperature, the humidity and the windspeed.
     - The user can hover over the icons for search, weather condition, humidity and windspeed and a string of additional information will appear on screen.
+    - The user can click on any of the data pieces/ icons to get some alternate information.
     - There is a visually appealing background image of the sky.
 
 - __The Structure Plane__
@@ -44,6 +45,11 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 ## Features
 
+- __User Interface__
+  - The UI is laid out to be simple, attractive and easy to use.
+
+![User Interface](assets/images/full-screen.png)
+
 - __Search Bar__
 
   - The search bar takes user input in the form of a location, when the user initiates a search by hitting enter or clicking on the search button the interactive area of the page will display the weather details of the location the user has entered. Except in cases where the input is not a valid location in which case the user will get an alert to say so.
@@ -56,6 +62,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
   - The weather icon changes depending on the condition field in the weather data pulled from the JSON.
   - When the phone/tablet user taps on the weather icon it increases in size, when the laptop user hovers over the weather icon it increases in size and a line of text appears on screen stating the current weather condition.
+  - Users can click on either the temperature or the weather icon and toggle between centigrade and farenheit.
   - Temperature is the largest text on the page as the most important written data.
   - The location data is being presented for can be seen just under the temperature.
 
@@ -63,7 +70,16 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 - __Humidity and Windspeed__ 
 
-  - The bottom section of the user interface displays both the humidity and the windspeed at the location on display.
+  - The bottom section of the user interface displays both the humidity and the windspeed at the chosen location.
   - Phone/tablet users can tap on the icons and they will increase in size, the laptop/desktop user can hover over the icons and they will increase in size ans they will see a short description of what each feature means.
+  - All users can click/tap the windspeed text/icon to toggle between windspeed in km/hr and mph, or the droplet icon/text and toggle between precipitation and humidity.
 
 ![Humidity and Windspeed](assets/images/humidity.png)
+
+## Testing 
+
+We undertook a broad array of tests across Google Chrome, Microsoft Edge and Safari as proof of the efficacy of the site.
+
+Testing was mainly focused on functionality and responsivity. The full test script can be observed by going to the file below. No tests failed.
+
+[World Wide Weather Test Script](world-wide-weather-script.md)
