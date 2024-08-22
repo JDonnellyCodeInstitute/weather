@@ -54,8 +54,16 @@ async function displayWeather(location) {
         // Logging to ensure required elements are visible in DOM and for ease of testing API call response
         console.log(response);
 
+        // Store temperatures in both units
+        temperatureCelsius = `${response.current.temp_c}°C`;
+        temperatureFahrenheit = `${response.current.temp_f}°F`;
+
+        //Display data
         updateDOM(response);
         setWeatherIcon(response.current.condition.text);
+
+        // Attach event listener to facilitate toggle after DOM is updated
+        temperatureElement.addEventListener("click", toggleTemperature);
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
@@ -67,10 +75,10 @@ async function displayWeather(location) {
  * Updates the DOM elements with weather data.
  */
 function updateDOM(response) {
-    document.querySelector('.location').innerHTML = response.location.name;
-    document.querySelector('.temperature').innerHTML = `${response.current.temp_c}°C`;
-    document.querySelector('.humidity').innerHTML = `${response.current.humidity}%`;
-    document.querySelector('.wind').innerHTML = `${response.current.wind_kph} km/hr`;
+    locationElement.innerHTML = response.location.name;
+    temperatureElement.innerHTML = `${response.current.temp_c}°C`;
+    humidityElement.innerHTML = `${response.current.humidity}%`;
+    windElement.innerHTML = `${response.current.wind_kph} km/hr`;
 }
 
 /**
@@ -80,6 +88,9 @@ function setWeatherIcon(condition) {
     const icon = document.querySelector('.icon');
     // Give user condition info when they hover over the icon
     icon.title = condition;
+
+    //Default for icon source
+    let iconSrc = "assets/images/1530392_weather_sun_sunny_temperature_icon.png";
 
     if (condition === "Sunny" || condition === "Clear") {
         iconSrc = "assets/images/1530392_weather_sun_sunny_temperature_icon.png";
@@ -109,4 +120,16 @@ function setWeatherIcon(condition) {
     }
 
     icon.src = iconSrc;
+}
+
+/**
+ * This increases interactivity by allowing users to switch between
+ * centigrade and farenheit by clicking on the temp / weather icon
+ */
+function toggleTemperature() {
+    if (temperatureElement.innerHTML === temperatureCelsius) {
+        temperatureElement.innerHTML = temperatureFahrenheit;
+    } else {
+        temperatureElement.innerHTML = temperatureCelsius;
+    }
 }
