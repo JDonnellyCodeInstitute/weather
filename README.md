@@ -3,7 +3,7 @@ walkthrough guidance from https://www.youtube.com/watch?v=MIYQR-Ybrn4
 pexels for background image https://www.pexels.com/photo/cloudy-sky-531756/
 google fonts for font https://fonts.google.com/
 
-#World Wide Weather
+# World Wide Weather
 
 World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity, rainfall and wind-speed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse, the user can also alternate between centigrade and farenheit, mph and km/h windspeed, as well as humidity and rainfall.
 

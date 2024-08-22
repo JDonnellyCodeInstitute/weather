@@ -198,4 +198,8 @@ body {
     .specifics {
         margin-top: 15px;
     }
+
+    .explainer {
+        bottom: 130px;
+    }
 }
