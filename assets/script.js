@@ -57,13 +57,21 @@ async function displayWeather(location) {
         // Store temperatures in both units
         temperatureCelsius = `${response.current.temp_c}°C`;
         temperatureFahrenheit = `${response.current.temp_f}°F`;
+        //Store windspeed in both units
+        windspeedKmh = `${response.current.wind_kph} km/hr<br>Windspeed`;
+        windspeedMph = `${response.current.wind_mph} miles/hr<br>Windspeed`;
+        //Store humidity and precipitation
+        humidity = `${response.current.humidity}%<br>Humidity`;
+        rain = `${response.current.precip_mm}mm<br>Rainfall`;
 
         //Display data
         updateDOM(response);
         setWeatherIcon(response.current.condition.text);
 
-        // Attach event listener to facilitate toggle after DOM is updated
+        // Mid method event listeners to increase interactivity
         temperatureElement.addEventListener("click", toggleTemperature);
+        windElement.addEventListener("click", toggleWindspeed);
+        humidityElement.addEventListener("click", toggleHumidity);
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
@@ -77,8 +85,8 @@ async function displayWeather(location) {
 function updateDOM(response) {
     locationElement.innerHTML = response.location.name;
     temperatureElement.innerHTML = `${response.current.temp_c}°C`;
-    humidityElement.innerHTML = `${response.current.humidity}%`;
-    windElement.innerHTML = `${response.current.wind_kph} km/hr`;
+    humidityElement.innerHTML = `${response.current.humidity}%<br>Humidity`;
+    windElement.innerHTML = `${response.current.wind_kph} km/hr<br>Windspeed`;
 }
 
 /**
@@ -124,12 +132,36 @@ function setWeatherIcon(condition) {
 
 /**
  * This increases interactivity by allowing users to switch between
- * centigrade and farenheit by clicking on the temp / weather icon
+ * centigrade and farenheit by clicking on the temperature
  */
 function toggleTemperature() {
     if (temperatureElement.innerHTML === temperatureCelsius) {
         temperatureElement.innerHTML = temperatureFahrenheit;
     } else {
         temperatureElement.innerHTML = temperatureCelsius;
+    }
+}
+
+/**
+ * This increases interactivity by allowing users to switch between
+ * kilometers/hr and miles/hr windspeed by clicking on the windspeed
+ */
+function toggleWindspeed() {
+    if (windElement.innerHTML === windspeedKmh) {
+        windElement.innerHTML = windspeedMph;
+    } else {
+        windElement.innerHTML = windspeedKmh;
+    }
+}
+
+/**
+ * This increases interactivity by allowing users to switch between
+ * humidity and precipitation by clicking on the humidity
+ */
+function toggleHumidity() {
+    if (humidityElement.innerHTML === humidity) {
+        humidityElement.innerHTML = rain;
+    } else {
+        humidityElement.innerHTML = humidity;
     }
 }
