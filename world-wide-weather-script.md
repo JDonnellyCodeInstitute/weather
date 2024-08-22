@@ -19,6 +19,9 @@ Click/tap wind sleeve icon | Windspeed content should toggle between km/hr and m
 Click/tap temperature content | Temperature content should toggle between centigrade and Fahrenheit | Pass
 Click/tap droplet content | Content should toggle between humidity % and rainfall in mm | Pass
 Click/tap windspeed content | Windspeed content should toggle between km/hr and mph | Pass
+Resize screen to phone size | All elements should fit the screen, be clearly legible where applicable and shouldn't overlap | Pass
+Resize screen to tablet size | All elements should fit the screen, be clearly legible where applicable and shouldn't overlap | Pass
+Resize screen to laptop size | All elements should fit the screen, be clearly legible where applicable and shouldn't overlap | Pass
 
 Browsers: 
 
