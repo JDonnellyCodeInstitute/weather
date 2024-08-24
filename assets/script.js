@@ -6,6 +6,7 @@ const windElement = document.querySelector('.wind');
 const icon = document.querySelector('.icon');
 const windSleeve = document.getElementById('wind-sleeve');
 const droplet = document.getElementById('water');
+const explainerElement = document.querySelector('.explainer');
 
 //API and URL info
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
@@ -57,6 +58,8 @@ async function displayWeather(location) {
         // Logging to ensure required elements are visible in DOM and for ease of testing API call response
         console.log(response);
 
+        //Store condition
+        condition = `${response.current.condition.text}`;
         // Store temperatures in both units
         temperatureCelsius = `${response.current.temp_c}°C`;
         temperatureFahrenheit = `${response.current.temp_f}°F`;
@@ -69,11 +72,11 @@ async function displayWeather(location) {
 
         //Display data
         updateDOM(response);
-        setWeatherIcon(response.current.condition.text);
+        setWeatherIcon(condition);
 
         // Mid method event listeners to increase interactivity
         temperatureElement.addEventListener("click", toggleTemperature);
-        icon.addEventListener("click", toggleTemperature);
+        icon.addEventListener("click", displayWeatherCondition);
 
         windElement.addEventListener("click", toggleWindspeed);
         windSleeve.addEventListener("click", toggleWindspeed);
@@ -145,8 +148,10 @@ function setWeatherIcon(condition) {
 function toggleTemperature() {
     if (temperatureElement.innerHTML === temperatureCelsius) {
         temperatureElement.innerHTML = temperatureFahrenheit;
+        explainerElement.innerHTML = `<p>Current temperature level is ${temperatureFahrenheit}.</p>`;
     } else {
         temperatureElement.innerHTML = temperatureCelsius;
+        explainerElement.innerHTML = `<p>Current temperature level is ${temperatureCelsius}.</p>`;
     }
 }
 
@@ -157,8 +162,10 @@ function toggleTemperature() {
 function toggleWindspeed() {
     if (windElement.innerHTML === windspeedKmh) {
         windElement.innerHTML = windspeedMph;
+        explainerElement.innerHTML = `<p>Current readings show ${windspeedMph}.</p>`;
     } else {
         windElement.innerHTML = windspeedKmh;
+        explainerElement.innerHTML = `<p>Current readings show ${windspeedKmh}.</p>`;
     }
 }
 
@@ -169,7 +176,17 @@ function toggleWindspeed() {
 function toggleHumidity() {
     if (humidityElement.innerHTML.trim() === humidity.trim()) {
         humidityElement.innerHTML = rain;
+        explainerElement.innerHTML = `<p>Current precipitation level is ${rain}.</p>`;
     } else {
         humidityElement.innerHTML = humidity;
+        explainerElement.innerHTML = `<p>Humidity measures the amount of water vapour in the atmosphere, there is currently ${humidity}</p>`;
     }
+}
+
+/**
+ * This function displays the current weather condition when the user clicks 
+ * on the weather icon
+ */
+function displayWeatherCondition() {
+    explainerElement.innerHTML = `<p>The current weather condition is ${condition}.</p>`;
 }
