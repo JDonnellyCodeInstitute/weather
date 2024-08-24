@@ -199,6 +199,10 @@ body {
         margin-top: 15px;
     }
 
+    .column img:hover {
+        width: 50px;
+    }
+
     .explainer {
         bottom: 130px;
     }

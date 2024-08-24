@@ -71,6 +71,10 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 ![Humidity and Windspeed](assets/images/humidity.png)
 
+## Bugs
+
+  - FIXED: Wind and humidity icons pushing each other out of UI area when clicked on, fixed with media query
+
 ## Testing 
 
 We undertook a broad array of tests across Google Chrome, Microsoft Edge and Safari as proof of the efficacy of the site.
