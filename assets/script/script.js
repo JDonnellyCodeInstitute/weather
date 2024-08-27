@@ -16,11 +16,34 @@ const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKeyCode}&aqi
 
 // Default at start
 document.addEventListener("DOMContentLoaded", () => {
-    displayWeather("Belfast");
+    getUserLocation();
     setupEventListeners();
     // Logging to ensure required elements are visible in DOM and for ease of testing API call response
     console.log(locationElement, temperatureElement, humidityElement, windElement);
 });
+
+/**
+ * Attempts to get the user's location and fetches weather data for that location.
+ */
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                displayWeather(`${lat},${lon}`);
+            },
+            error => {
+                console.error("Error getting location: ", error);
+                // Fallback to a default location if the user denies location access or there's an error
+                displayWeather("Belfast");
+            }
+        );
+    } else {
+        // Geolocation is not supported by the browser, use a default location
+        displayWeather("Belfast");
+    }
+}
 
 /**
  * Sets up event listeners for the search functionality.

@@ -135,6 +135,7 @@ To fork:
   - I did the following walkthrough on youtube as the initial guidance for the project and built on it https://www.youtube.com/watch?v=MIYQR-Ybrn4.
   - The explanation for deployment was taken from code institute's Love Running tutorial.
   - For design planning, I used the app Balsamiq Wireframes.
+  - For guidance on using geolocation API I went to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API).
 
 ### Content
   - Fonts taken from [Google Fonts](https://fonts.google.com/)
@@ -143,6 +144,3 @@ To fork:
 ### Media
   - Weather icons taken from [Icon Finder](https://www.iconfinder.com/)
   - [Pexels](https://www.pexels.com/photo/cloudy-sky-531756/) used for background image 
-
-
-
