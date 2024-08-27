@@ -128,17 +128,28 @@ body {
 
 .column {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
 }
 
 .column img {
     width: 40px;
-    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.column img, .column p {
+    cursor: pointer;
+}
+
+.column p:hover {
+    transform: scale(1.1);
 }
 
 .column img:hover {
-    width: 75px;
+    transform: scale(1.2);
 }
 
 .humidity, .wind {
@@ -149,6 +160,7 @@ body {
 /*Styling click prompt spans*/
 .guide {
     font-size: x-small;
+    cursor: auto;
 }
 
 /*Styling additional info at the bottom of the screen*/
@@ -163,6 +175,12 @@ body {
 }
 
 /*Media queries for responsivity on varying screen sizes*/
+@media screen and (max-width: 1024px) {
+    .explainer {
+        margin-top: 25px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         width: 95%;
