@@ -7,6 +7,8 @@ const icon = document.querySelector('.icon');
 const windSleeve = document.getElementById('wind-sleeve');
 const droplet = document.getElementById('water');
 const explainerElement = document.querySelector('.explainer');
+const searchBar = document.getElementById('search-bar');
+const searchButton = document.getElementById('search');
 
 //API and URL info
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
@@ -24,19 +26,28 @@ document.addEventListener("DOMContentLoaded", () => {
  * Sets up event listeners for the search functionality.
  */
 function setupEventListeners() {
-    document.getElementById('search').addEventListener("click", handleSearch);
-    document.getElementById('search-bar').addEventListener("keydown", function (event) {
+    searchButton.addEventListener("click", handleSearch);
+    searchBar.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             handleSearch();
         }
+        
     });
+    temperatureElement.addEventListener("click", toggleTemperature);
+    icon.addEventListener("click", displayWeatherCondition);
+
+    windElement.addEventListener("click", toggleWindspeed);
+    windSleeve.addEventListener("click", toggleWindspeed);
+
+    humidityElement.addEventListener("click", toggleHumidity);
+    droplet.addEventListener("click", toggleHumidity);
 }
 
 /**
  * Handles the search event.
  */
 function handleSearch() {
-    const place = document.getElementById('search-bar').value;
+    const place = searchBar.value;
     displayWeather(place);
 }
 
@@ -73,16 +84,6 @@ async function displayWeather(location) {
         //Display data
         updateDOM(response);
         setWeatherIcon(condition);
-
-        // Mid method event listeners to increase interactivity
-        temperatureElement.addEventListener("click", toggleTemperature);
-        icon.addEventListener("click", displayWeatherCondition);
-
-        windElement.addEventListener("click", toggleWindspeed);
-        windSleeve.addEventListener("click", toggleWindspeed);
-
-        humidityElement.addEventListener("click", toggleHumidity);
-        droplet.addEventListener("click", toggleHumidity);
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
