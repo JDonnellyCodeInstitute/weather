@@ -73,19 +73,43 @@ body {
 }
 
 /*Styling the main image*/
+.weather-condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .icon {
     width: 180px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .icon:hover {
     width: 200px;
 }
 
-/*Styling temperature script*/
+/*Styling temperature section*/
+.temperature-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    margin: 0;
+    cursor: pointer;
+}
+
 .climate h1 {
     font-size: 3rem;
     font-weight: 450;
+}
+
+.temperature:hover {
+    transform: scale(1.1);
 }
 
 /*Styling location script*/
@@ -120,6 +144,11 @@ body {
 .humidity, .wind {
     font-size: 1.25rem;
     margin-top: -5px;
+}
+
+/*Styling click prompt spans*/
+.guide {
+    font-size: x-small;
 }
 
 /*Styling additional info at the bottom of the screen*/

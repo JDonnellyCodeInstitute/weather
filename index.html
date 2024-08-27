@@ -14,7 +14,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+NO:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
@@ -23,38 +22,40 @@
         <!--Search bar section-->
         <section class="lookup">
             <input type="text" placeholder="Search by Location" spellcheck="false" id="search-bar">
-            <button id="search"><img src="assets/images/352091_search_icon.png" alt="Search icon."
-                    title="Click to Search"></button>
+            <button id="search">
+                <img src="assets/images/352091_search_icon.png" alt="Search icon." title="Click to Search">
+            </button>
         </section>
         <!--Temperature, icon, and weather condition section-->
         <section class="climate">
-            <img src="assets/images/1530369_weather_cloud_clouds_cloudy_icon.png" alt="Cloudy" class="icon"
-                title="condition">
-            <h1 class="temperature">19°C</h1>
+            <div class="weather-condition">
+                <img src="assets/images/1530369_weather_cloud_clouds_cloudy_icon.png" alt="Cloudy" class="icon" title="condition">
+                <span class="guide">Click for condition information</span>
+            </div>
+            <div class="temperature-section">
+                <h1 class="temperature">19°C</h1>
+                <span class="guide">Click to toggle °C / °F</span>
+            </div>
             <h2 class="location">Belfast</h2>
             <!--Windspeed, rain and humidity section-->
             <section class="specifics">
                 <div class="column">
                     <img id="water" src="assets/images/9061722_humidity_weather_forecast_icon.png" alt="Humidity"
                         title="Humidity % represents the amount of water vapour in the atmosphere. Rainfall is measured in millimetres at the time of use.">
-                    <div>
-                        <p class="humidity">60%</p>
-                    </div>
+                    <p class="humidity">60%</p>
+                    <span class="guide">Click to toggle humidity / rainfall</span>
                 </div>
                 <div class="column">
                     <img id="wind-sleeve" src="assets/images/416403_forecast_sock_weather_wind_icon.png" alt="Wind"
                         title="This tells us how fast the wind is blowing in kilometres or miles per hour.">
-                    <div>
-                        <p class="wind">20 km/hr</p>
-                    </div>
+                    <p class="wind">20 km/hr</p>
+                    <span class="guide">Click to toggle km/h / mph</span>
                 </div>
-                <!--Additional info section-->
-                <footer class="explainer">
-                    <p>
-                        (CLICK EACH DATA POINT FOR ALTERNATIVE INFORMATION)
-                    </p>
-                </footer>
             </section>
+            <!--Additional info section-->
+            <footer class="explainer">
+                <p>(CLICK EACH DATA POINT FOR ALTERNATIVE INFORMATION)</p>
+            </footer>
         </section>
     </main>
     <!--Link to JS-->
