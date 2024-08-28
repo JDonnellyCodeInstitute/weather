@@ -1,6 +1,6 @@
 # World Wide Weather
 
-World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity, rainfall and wind-speed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse, the user can also alternate between centigrade and farenheit, mph and km/h windspeed, as well as humidity and rainfall.
+World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity, rainfall and wind-speed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse, the user can also alternate between centigrade and farenheit, mph and km/h windspeed, as well as humidity and rainfall. Additionally the user can pan to a more data intensive table of potentially useful weather information.
 
 ![Responsive Mockup](assets/images/mock-up.png)
 
@@ -9,7 +9,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 - __The Strategy Plane__
   - Defining Goals and User Needs:
     - Our goal is to provide a user friendly web app that allows users to search by location for various weather factors including wind speed, humidity and temperature.
-    - User needs are clear aesthetically pleasing presentation of the required information, easy and logical site navigation, such as use of the search bar, and some interactivity.
+    - User needs are clear, aesthetically pleasing presentation of the required information, easy and logical site navigation, such as use of the search bar, and interactivity via responsive data points and a table of additional information.
 
 - __The Scope Plane__
   - Determining Features and Content:
@@ -17,6 +17,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
     - Upon a successful search the user will see an image relevant to the weather condition stipulated in the JSON, the temperature, the humidity and the windspeed.
     - The user can hover over the icons for search, weather condition, humidity and windspeed and a string of additional information will appear on screen.
     - The user can click on any of the data pieces/ icons to get some alternate information.
+    - The user can click the supplementary data button and view a table of information such as wind direction, location information, and UV index.
     - There is a visually appealing background image of the sky.
 
 - __The Structure Plane__
@@ -24,9 +25,11 @@ World Wide Weather is a simple web app that allows users to make API calls that 
     - Search Bar and Button - Set at the highest point of the user interface for ease of use.
     - Weather Icon and Temperature - Largest and most relevant information in the centre of the screen.
     - Sub-data - Humidity and Windspeed sections smaller housed low to left and right of centre.
+    - Supplementary data - Can be clicked to change the user's screen entirely.
+    - Additional information - Changing line at the bottom of the site that reacts to user clicks.
 
 - __The Skeleton Plane__
-  - Layout and navigation design plan across device types:
+  - The layout and navigation design plan across device types can be seen below. Note that at inception the idea for the table of supplementary data hadn't yet been suggested.
 
     [Wireframe Desktop](assets/images/wireframe-laptop.png)
     [Wireframe Tablet](assets/images/wireframe-tablet.png)
@@ -57,19 +60,27 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
   - The weather icon changes depending on the condition field in the weather data pulled from the JSON.
   - When the phone/tablet user taps on the weather icon it increases in size, when the laptop user hovers over the weather icon it increases in size and a line of text appears on screen stating the current weather condition.
-  - Users can click on either the temperature or the weather icon and toggle between centigrade and farenheit.
+  - Users can click on the weather icon and the text at the bottom of the page will show the weather condition.
+  - Users can click on the temperature to toggle between centigrade and farenheit.
   - Temperature is the largest text on the page as the most important written data.
-  - The location data is being presented for can be seen just under the temperature.
+  - The location can be seen just under the temperature.
 
 ![Weather Icon, Temperature and Location](assets/images/temp-icon-location.png)
 
 - __Humidity and Windspeed__ 
 
   - The bottom section of the user interface displays both the humidity and the windspeed at the chosen location.
-  - Phone/tablet users can tap on the icons and they will increase in size, the laptop/desktop user can hover over the icons and they will increase in size ans they will see a short description of what each feature means.
+  - Phone/tablet users can tap on the icons and they will increase in size, the laptop/desktop user can hover over the icons and they will increase in size ans they will see a short description of what each feature means. When either type of user clicks on the data points the text at the bottom of the screen will change to give a more detailed explanation of each datapoint.
   - All users can click/tap the windspeed text/icon to toggle between windspeed in km/hr and mph, or the droplet icon/text and toggle between precipitation and humidity.
 
 ![Humidity and Windspeed](assets/images/humidity.png)
+
+- __Supplementary Table of Data__ 
+
+  - The user can click the button that says "TO SUPPLEMENTARY DATA →" to be brought to a table with a wide variety of additional location and weather information.
+  - When looking at the table the user will be able to return to the main page by clicking the button that says "TO STANDARD DATA ←".
+
+![Data Table](assets/images/table.png)
 
 ## Bugs
 

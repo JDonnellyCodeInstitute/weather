@@ -198,6 +198,10 @@ body {
     transform: scale(1.1);
 }
 
+#hide-table {
+    margin-top: 10px;
+}
+
 /*Media queries for responsivity on varying screen sizes*/
 @media screen and (max-width: 1024px) {
     .explainer {
