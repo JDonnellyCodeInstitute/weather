@@ -10,6 +10,12 @@ const explainerElement = document.querySelector('.explainer');
 const searchBar = document.getElementById('search-bar');
 const searchButton = document.getElementById('search');
 
+//Table specific const declarations
+const showTableButton = document.getElementById('show-table');
+const hideTableButton = document.getElementById('hide-table');
+const tableView = document.getElementById('table-view');
+const weatherTableBody = document.querySelector('#weather-table tbody');
+
 //API and URL info
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
 const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKeyCode}&aqi=no&q=`;
