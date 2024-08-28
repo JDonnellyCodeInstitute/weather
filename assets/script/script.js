@@ -55,6 +55,7 @@ function getUserLocation() {
  * Sets up event listeners
  */
 function setupEventListeners() {
+    //For search events
     searchButton.addEventListener("click", handleSearch);
     searchBar.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
@@ -62,6 +63,8 @@ function setupEventListeners() {
         }
         
     });
+
+    //For interactivity toggles on main UI
     temperatureElement.addEventListener("click", toggleTemperature);
     icon.addEventListener("click", displayWeatherCondition);
 
@@ -70,6 +73,17 @@ function setupEventListeners() {
 
     humidityElement.addEventListener("click", toggleHumidity);
     droplet.addEventListener("click", toggleHumidity);
+
+    //For displaying table of advanced data
+    showTableButton.addEventListener('click', () => {
+        document.body.classList.add('hidden');
+        tableView.classList.remove('hidden');
+    });
+
+    hideTableButton.addEventListener('click', () => {
+        tableView.classList.add('hidden');
+        document.body.classList.remove('hidden');
+    });
 }
 
 /**
@@ -113,6 +127,9 @@ async function displayWeather(location) {
         //Display data
         updateDOM(response);
         setWeatherIcon(condition);
+
+        //Create table of data
+        updateTable(response);
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
