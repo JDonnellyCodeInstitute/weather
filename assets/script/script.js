@@ -52,7 +52,7 @@ function getUserLocation() {
 }
 
 /**
- * Sets up event listeners for the search functionality.
+ * Sets up event listeners
  */
 function setupEventListeners() {
     searchButton.addEventListener("click", handleSearch);
@@ -219,4 +219,61 @@ function toggleHumidity() {
  */
 function displayWeatherCondition() {
     explainerElement.innerHTML = `<p>The current weather condition is ${condition}.</p>`;
+}
+
+/**
+ * This function is to allow the user to see a comprehensive breakdown of the 
+ * weather data when they click the arrow pointing right
+ */
+function updateTable(response) {
+
+    //clear before use
+    weatherTableBody.innerHTML = "";
+
+    //Weather data from 'current' section of API response
+    const currentData = [
+        { property: 'Condition', value: response.current.condition.text },
+        { property: 'Temperature (C)', value: `${response.current.temp_c}°C` },
+        { property: 'Temperature (F)', value: `${response.current.temp_f}°F` },
+        { property: 'Feels Like (C)', value: `${response.current.feelslike_c}°C` },
+        { property: 'Feels Like (F)', value: `${response.current.feelslike_f}°F` },
+        { property: 'Dew Point (C)', value: `${response.current.dewpoint_c}°C` },
+        { property: 'Dew Point (F)', value: `${response.current.dewpoint_f}°F` },
+        { property: 'Wind Chill (C)', value: `${response.current.windchill_c}°C` },
+        { property: 'Wind Chill (F)', value: `${response.current.windchill_f}°F` },
+        { property: 'Humidity', value: `${response.current.humidity}%` },
+        { property: 'Wind Speed (km/h)', value: `${response.current.wind_kph} km/h` },
+        { property: 'Wind Speed (mph)', value: `${response.current.wind_mph} mph` },
+        { property: 'Wind Direction', value: `${response.current.wind_dir}` },
+        { property: 'Precipitation (mm)', value: `${response.current.precip_mm} mm` },
+        { property: 'Precipitation (in)', value: `${response.current.precip_in} in` },
+        { property: 'Visibility (km)', value: `${response.current.vis_km} km` },
+        { property: 'Visibility (miles)', value: `${response.current.vis_miles} miles` },
+        { property: 'UV Index', value: `${response.current.uv}` },
+        { property: 'Last Updated', value: `${response.current.last_updated}` }
+    ];
+
+    // Data from the 'location' section of the API response
+    const locationData = [
+        { property: 'Location Name', value: response.location.name },
+        { property: 'Country', value: response.location.country },
+        { property: 'Latitude', value: `${response.location.lat}` },
+        { property: 'Longitude', value: `${response.location.lon}` },
+        { property: 'Local Time', value: `${response.location.localtime}` }
+    ];
+
+    // Combine the data
+    const combinedData = [...locationData, ...currentData];
+
+    //Populate each row with a corresponding property and value then append the row to the table
+    combinedData.forEach(item => {
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        const cell2 = document.createElement('td');
+        cell1.textContent = item.property;
+        cell2.textContent = item.value;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        weatherTableBody.appendChild(row);
+    });
 }
