@@ -103,8 +103,11 @@ Testing was mainly focused on functionality and responsivity. The full test scri
   - [index.html validation](assets/images/html-check.png)
 
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+  - No errors were found when passing through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
   - [style.css validation](assets/images/css-check.png)
+
+- JavaScript
+  - No errors were found when passing through the official [JSHint](https://jshint.com/)
 
 ### Lighthouse Scores
 
