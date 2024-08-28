@@ -20,12 +20,19 @@ const weatherTableBody = document.querySelector('#weather-table tbody');
 const apiKeyCode = "ecf9c35dccc24ecc834142452241808";
 const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKeyCode}&aqi=no&q=`;
 
+//Method variables
+let temperatureCelsius;
+let condition;
+let temperatureFahrenheit;
+let windspeedKmh;
+let windspeedMph;
+let humidity;
+let rain;
+
 // Default at start
 document.addEventListener("DOMContentLoaded", () => {
     getUserLocation();
     setupEventListeners();
-    // Logging to ensure required elements are visible in DOM and for ease of testing API call response
-    console.log(locationElement, temperatureElement, humidityElement, windElement);
 });
 
 /**
@@ -60,8 +67,7 @@ function setupEventListeners() {
     searchBar.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             handleSearch();
-        }
-        
+        }   
     });
 
     //For interactivity toggles on main UI

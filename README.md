@@ -86,6 +86,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
   - FIXED: Wind and humidity icons pushing each other out of UI area when clicked on, fixed with media query
   - FIXED: Incorrect selector used for table of data event listener causing the whole body to be hidden
+  - Outstanding: Inconsistencies in geolocation across different browsers
 
 ## Testing 
 
