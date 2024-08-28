@@ -86,7 +86,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
   - FIXED: Wind and humidity icons pushing each other out of UI area when clicked on, fixed with media query
   - FIXED: Incorrect selector used for table of data event listener causing the whole body to be hidden
-  - Outstanding: Inconsistencies in geolocation across different browsers
+  - Outstanding: Inconsistencies in geolocation across different browsers - not something the dev will be able to fix
 
 ## Testing 
 
@@ -108,7 +108,8 @@ Testing was mainly focused on functionality and responsivity. The full test scri
   - [style.css validation](assets/images/css-check.png)
 
 - JavaScript
-  - No errors were found when passing through the official [JSHint](https://jshint.com/)
+  - No errors were found when passing through the official [JSHint](https://jshint.com/), the only warning was the use of an async function which is only available in ES8 upward
+  -[script.js validation](assets/images/js-validation.png)
 
 ### Lighthouse Scores
 
