@@ -203,7 +203,7 @@ function toggleHumidity() {
         explainerElement.innerHTML = `<p>Current precipitation level is ${rain}.</p>`;
     } else {
         humidityElement.innerHTML = humidity;
-        explainerElement.innerHTML = `<p>Humidity measures the amount of water vapour in the atmosphere, there is currently ${humidity}</p>`;
+        explainerElement.innerHTML = `<p>There is ${humidity} (water vapour) in the atmosphere.</p>`;
     }
 }
 

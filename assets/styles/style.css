@@ -234,10 +234,11 @@ body {
     .lookup input {
         font-size: 0.9rem;
         padding: 8px 12px;
+        top: 10%;
     }
 
     .icon {
-        width: 120px;
+        transform: scale(1.1);
     }
 
     .climate h1 {
@@ -258,5 +259,6 @@ body {
 
     .explainer {
         width: 90%;
+        bottom: 15%;
     }
 }
