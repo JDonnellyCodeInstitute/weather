@@ -249,20 +249,13 @@ function updateTable(response) {
 
     //Weather data from 'current' section of API response
     const currentData = [
-        { property: 'Condition', value: response.current.condition.text },
-        { property: 'Temperature (C)', value: `${response.current.temp_c}°C` },
-        { property: 'Temperature (F)', value: `${response.current.temp_f}°F` },
         { property: 'Feels Like (C)', value: `${response.current.feelslike_c}°C` },
         { property: 'Feels Like (F)', value: `${response.current.feelslike_f}°F` },
         { property: 'Dew Point (C)', value: `${response.current.dewpoint_c}°C` },
         { property: 'Dew Point (F)', value: `${response.current.dewpoint_f}°F` },
         { property: 'Wind Chill (C)', value: `${response.current.windchill_c}°C` },
         { property: 'Wind Chill (F)', value: `${response.current.windchill_f}°F` },
-        { property: 'Humidity', value: `${response.current.humidity}%` },
-        { property: 'Wind Speed (km/h)', value: `${response.current.wind_kph} km/h` },
-        { property: 'Wind Speed (mph)', value: `${response.current.wind_mph} mph` },
         { property: 'Wind Direction', value: `${response.current.wind_dir}` },
-        { property: 'Precipitation (mm)', value: `${response.current.precip_mm} mm` },
         { property: 'Precipitation (in)', value: `${response.current.precip_in} in` },
         { property: 'Visibility (km)', value: `${response.current.vis_km} km` },
         { property: 'Visibility (miles)', value: `${response.current.vis_miles} miles` },
