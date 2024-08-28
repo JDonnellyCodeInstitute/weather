@@ -52,11 +52,32 @@
                     <span class="guide">Click image or text to toggle km/h / mph</span>
                 </div>
             </section>
+
+            <!-- Additional info table arrow -->
+            <button id="show-table" class="arrow-button">→</button>
+
             <!--Additional info section-->
             <footer class="explainer">
                 <p>(CLICK EACH DATA POINT FOR ALTERNATIVE INFORMATION)</p>
             </footer>
         </section>
+
+        <!-- Container for the table view, hidden until use-->
+        <section id="table-view" class="hidden">
+            <button id="hide-table" class="arrow-button">←</button>
+            <table id="weather-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Weather data rows to be inserted here dynamically via JS-->
+                </tbody>
+            </table>
+        </section>
+
     </main>
     <!--Link to JS-->
     <script src="assets/script/script.js"></script>
