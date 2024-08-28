@@ -175,6 +175,11 @@ body {
     width: 100%;
 }
 
+/*Comprehensive table styling*/
+.hidden {
+    display: none;
+}
+
 /*Media queries for responsivity on varying screen sizes*/
 @media screen and (max-width: 1024px) {
     .explainer {
