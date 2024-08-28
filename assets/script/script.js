@@ -76,13 +76,13 @@ function setupEventListeners() {
 
     //For displaying table of advanced data
     showTableButton.addEventListener('click', () => {
-        document.body.classList.add('hidden');
+        document.querySelector('.climate').classList.add('hidden');
         tableView.classList.remove('hidden');
     });
 
     hideTableButton.addEventListener('click', () => {
         tableView.classList.add('hidden');
-        document.body.classList.remove('hidden');
+        document.querySelector('.climate').classList.remove('hidden');
     });
 }
 
