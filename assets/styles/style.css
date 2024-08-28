@@ -175,9 +175,27 @@ body {
     width: 100%;
 }
 
-/*Comprehensive table styling*/
+/*Data table and arrow button styling*/
+#weather-table {
+    border: 1px solid;
+    border-color: #fff;
+    text-align: justify;
+  }
+
 .hidden {
     display: none;
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    font-size: medium;
+    cursor: pointer;
+    color: #dbf5f1;
+}
+
+.arrow-button:hover {
+    transform: scale(1.1);
 }
 
 /*Media queries for responsivity on varying screen sizes*/
@@ -242,7 +260,7 @@ body {
         top: 10%;
     }
 
-    .icon {
+    .icon:hover {
         transform: scale(1.1);
     }
 

@@ -74,6 +74,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 ## Bugs
 
   - FIXED: Wind and humidity icons pushing each other out of UI area when clicked on, fixed with media query
+  - FIXED: Incorrect selector used for table of data event listener causing the whole body to be hidden
 
 ## Testing 
 
@@ -136,6 +137,7 @@ To fork:
   - The explanation for deployment was taken from code institute's Love Running tutorial.
   - For design planning, I used the app Balsamiq Wireframes.
   - For guidance on using geolocation API I went to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API).
+  - Guidance on proper use of forEach loops was taken from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) also.
 
 ### Content
   - Fonts taken from [Google Fonts](https://fonts.google.com/)
