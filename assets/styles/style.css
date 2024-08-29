@@ -87,7 +87,7 @@ body {
 }
 
 .icon:hover {
-    width: 200px;
+    transform: scale(1.2);
 }
 
 /*Styling temperature section*/
@@ -295,6 +295,11 @@ body {
 @media screen and (width: 375px) and (height: 667px) {
     .explainer {
         bottom: 25px;
+    }
+
+    .icon {
+        width: 120px;
+        margin-top: 0;
     }
 }
 
