@@ -1,6 +1,6 @@
 # World Wide Weather
 
-World Wide Weather is a simple web app that allows users to make API calls that feedback the temperature, condition, humidity, rainfall and wind-speed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse, the user can also alternate between centigrade and farenheit, mph and km/h windspeed, as well as humidity and rainfall. Additionally the user can pan to a more data intensive table of potentially useful weather information.
+World Wide Weather is a simple web app that allows users to make API calls that provide feedback on the temperature, condition, humidity, rainfall and windspeed of a location of their choice. Points of importance will increase in size and display a title with extra information when the user hovers over them with their mouse, the user can also alternate between centigrade and fahrenheit, mph and km/h windspeed, as well as humidity and rainfall. Additionally, the user can pan to a more data-intensive table of potentially useful weather information.
 
 ![Responsive Mockup](assets/images/mock-up.png)
 
@@ -8,13 +8,13 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 - __The Strategy Plane__
   - Defining Goals and User Needs:
-    - Our goal is to provide a user friendly web app that allows users to search by location for various weather factors including wind speed, humidity and temperature.
-    - User needs are clear, aesthetically pleasing presentation of the required information, easy and logical site navigation, such as use of the search bar, and interactivity via responsive data points and a table of additional information.
+    - Our goal is to provide a user-friendly web app that allows users to search by location for various weather factors including wind speed, humidity and temperature.
+    - User needs are clear, aesthetically pleasing presentation of the required information, easy and logical site navigation, such as the use of the search bar, and interactivity via responsive data points and a table of additional information.
 
 - __The Scope Plane__
   - Determining Features and Content:
-    - The main tool for the user is the search bar and search button. They can input a location, as the placeholder text suggests, and search by clicking the button or by hitting enter. A method is called to add their input to the API call that requests the weather data as a JSON. If they search for something that is not a recognised location they will receive an alert stating "Location not found. Please enter a valid location."
-    - Upon a successful search the user will see an image relevant to the weather condition stipulated in the JSON, the temperature, the humidity and the windspeed.
+    - The main tools for the user are the search bar and search button. They can input a location, as the placeholder text suggests, and search by clicking the button or by hitting enter. A method is called to add their input to the API call that requests the weather data as a JSON. If they search for something that is not a recognised location they will receive an alert stating "Location not found. Please enter a valid location."
+    - Upon a successful search, the user will see an image relevant to the weather condition stipulated in the JSON, the temperature, the humidity and the windspeed.
     - The user can hover over the icons for search, weather condition, humidity and windspeed and a string of additional information will appear on screen.
     - The user can click on any of the data pieces/ icons to get some alternate information.
     - The user can click the supplementary data button and view a table of information such as wind direction, location information, and UV index.
@@ -37,8 +37,8 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 - __The Surface Plane__
   - The Visual Design:
-    - The focus area is a cool blue-gradient reminiscent of the sky and is translucent so the user can see the attractive background image.
-    - The font is Montserrat taken from google docs, it is simple, clear and attractive. The colour contrasts well with the background.
+    - The focus area is a cool blue gradient reminiscent of the sky and is translucent so the user can see the attractive background image.
+    - The font is Montserrat taken from Google Fonts, it is simple, clear and attractive. The colour contrasts well with the background.
     - The condition images are clear and show an array of weather conditions through simple icons.
 
 ## Features
@@ -61,7 +61,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
   - The weather icon changes depending on the condition field in the weather data pulled from the JSON.
   - When the phone/tablet user taps on the weather icon it increases in size, when the laptop user hovers over the weather icon it increases in size and a line of text appears on screen stating the current weather condition.
   - Users can click on the weather icon and the text at the bottom of the page will show the weather condition.
-  - Users can click on the temperature to toggle between centigrade and farenheit.
+  - Users can click on the temperature to toggle between centigrade and fahrenheit.
   - Temperature is the largest text on the page as the most important written data.
   - The location can be seen just under the temperature.
 
@@ -70,7 +70,7 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 - __Humidity and Windspeed__ 
 
   - The bottom section of the user interface displays both the humidity and the windspeed at the chosen location.
-  - Phone/tablet users can tap on the icons and they will increase in size, the laptop/desktop user can hover over the icons and they will increase in size ans they will see a short description of what each feature means. When either type of user clicks on the data points the text at the bottom of the screen will change to give a more detailed explanation of each datapoint.
+  - Phone/tablet users can tap on the icons and they will increase in size, the laptop/desktop user can hover over the icons and they will increase in size and they will see a short description of what each feature means. When either type of user clicks on the data points the text at the bottom of the screen will change to give a more detailed explanation of each data point.
   - All users can click/tap the windspeed text/icon to toggle between windspeed in km/hr and mph, or the droplet icon/text and toggle between precipitation and humidity.
 
 ![Humidity and Windspeed](assets/images/humidity.png)
@@ -84,9 +84,10 @@ World Wide Weather is a simple web app that allows users to make API calls that 
 
 ## Bugs
 
-  - FIXED: Wind and humidity icons pushing each other out of UI area when clicked on, fixed with media query
+  - FIXED: Wind and humidity icons pushing each other out of the UI area when clicked on, fixed with media query
   - FIXED: Incorrect selector used for table of data event listener causing the whole body to be hidden
-  - Outstanding: Inconsistencies in geolocation across different browsers - not something the dev will be able to fix
+  - FIXED: Explainer section overlapping with other elements due to fixed position, fixed with media queries
+  - Outstanding: Inconsistencies in geolocation across different browsers - this is not something the dev will be able to fix as this is an issue with the API itself and is outside the scope of this project
 
 ## Testing 
 
@@ -113,7 +114,7 @@ Testing was mainly focused on functionality and responsivity. The full test scri
 
 ### Lighthouse Scores
 
-The lighthouse evaluation is a dev ops tool that allows you to get a score measured on performance, accessibility, best practices, and search engine optimisation. The aim is to have a score of over 90 for each evaluation point. Below shows the World Wide Weather scores.
+The lighthouse evaluation is a dev ops tool that allows you to get a score measured on performance, accessibility, best practices, and search engine optimisation. The aim is to have a score of over 90 for each evaluation point. Below are the World Wide Weather scores:
 
 ![Lighthouse](assets/images/lighthouse.png)
 
@@ -149,11 +150,11 @@ To fork:
 
 ## Credits
 
-  - I did the following walkthrough on youtube as the initial guidance for the project and built on it https://www.youtube.com/watch?v=MIYQR-Ybrn4.
-  - The explanation for deployment was taken from code institute's Love Running tutorial.
+  - I did the following walkthrough on YouTube as the initial guidance for the project and built on it https://www.youtube.com/watch?v=MIYQR-Ybrn4.
+  - The explanation for deployment was taken from Code Institute's Love Running tutorial.
   - For design planning, I used the app Balsamiq Wireframes.
   - For guidance on using geolocation API I went to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API).
-  - Guidance on proper use of forEach loops was taken from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) also.
+  - Guidance on the proper use of forEach loops was taken from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) also.
 
 ### Content
   - Fonts taken from [Google Fonts](https://fonts.google.com/)

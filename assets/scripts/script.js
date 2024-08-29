@@ -80,7 +80,7 @@ function setupEventListeners() {
     humidityElement.addEventListener("click", toggleHumidity);
     droplet.addEventListener("click", toggleHumidity);
 
-    //For displaying table of advanced data
+    //For displaying a table of supplementary data
     showTableButton.addEventListener('click', () => {
         document.querySelector('.climate').classList.add('hidden');
         tableView.classList.remove('hidden');
@@ -196,7 +196,7 @@ function setWeatherIcon(condition) {
 
 /**
  * This increases interactivity by allowing users to switch between
- * centigrade and farenheit by clicking on the temperature
+ * centigrade and fahrenheit by clicking on the temperature
  */
 function toggleTemperature() {
     if (temperatureElement.innerHTML === temperatureCelsius) {
@@ -210,7 +210,7 @@ function toggleTemperature() {
 
 /**
  * This increases interactivity by allowing users to switch between
- * kilometers/hr and miles/hr windspeed by clicking on the windspeed
+ * kilometres/hr and miles/hr windspeed by clicking on the windspeed
  */
 function toggleWindspeed() {
     if (windElement.innerHTML === windspeedKmh) {
